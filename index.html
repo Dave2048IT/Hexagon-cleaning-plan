@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+   <meta charset="UTF-8">
+   <title>Putzplan mit Hexagons</title>
+   <style>
+        * {
+            background: black;
+            color: white;
+            font-family: Helvetica;
+			text-align: center;
+        }
+        h1 {
+			font-size: 3em;
+        }
+        input {
+            border: 1px solid green;
+            
+        }
+        #myInputs * {
+            font-size: 2em;
+        }
+        #myInputs {
+            display: none;
+        }
+   </style>
+  </head>
+  <body>
+    <h1 onclick="hide_or_show()">
+        Putzplan<br>vom <span id="fromDate"></span> bis <span id="toDate"></span>
+    </h1>
+    <div id="myInputs">
+        <label for="my_NameOffset">Offset der Namen:</label>
+        <input type="number" id="myNameOffset" min="0" max="9" value="0" />
+        <br><br>
+        <label for="myCountNames">Wie viele Namen?</label>
+        <input type="number" id="myCountNames" min="0" max="9" value="6" />
+        <br><br>
+        <label for="myRadius">Radius:</label>
+        <input type="number" id="myRadius" min="0" max="999" value="0" />
+        <br><br>
+        <label for="myNames">Die Namen:</label>
+        <input type="text" id="myNames" />
+        <br><br>
+        <label for="myServices">Die Dienste:</label>
+        <input type="text" id="myServices" />
+        <br><br>
+        <input type="button" onclick="redraw()" value="Neu zeichnen" />
+    </div>
+
+    <center>
+        <canvas id="canvas" width="2000" height="2000"/>
+    </center>
+    <script src="script.js"></script>
+  </body>
+</html>
